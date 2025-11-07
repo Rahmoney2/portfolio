@@ -1,281 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <style>
-    body {
-      scroll-behavior: smooth;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./black\ image.jpg) center/cover no-repeat;
-      background-position: center;
-    }
-    .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./11.jpg);
-      background-position: center;
-      background-size: cover;
-      color: white;
-      padding: 100px 0;
-    }
-    .hero img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 5px solid black;
-    }
-   .skill-card {
-      border: none;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .skill-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-    .skill-card i {
-      font-size: 3rem;
-      color: black;
-    }
-    .project-card {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 2s ease-out;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        scroll-behavior: smooth;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url(./black\ image.jpg) center/cover no-repeat;
+        background-position: center;
+      }
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url(./11.jpg);
+        background-position: center;
+        background-size: cover;
+        color: white;
+        padding: 100px 0;
+      }
+      .hero img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 5px solid black;
+      }
+      .skill-card {
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+      .skill-card i {
+        font-size: 3rem;
+        color: black;
+      }
+      .project-card {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 2s ease-out;
+      }
 
-    .project-card.show {
-      opacity: 1; /* Corrected */
-      transform: translateY(5px); /* Reset to original position */
-    }
+      .project-card.show {
+        opacity: 1; /* Corrected */
+        transform: translateY(5px); /* Reset to original position */
+      }
 
-    .project-card img {
-      height: 200px;
-      object-fit: cover;
-    }
+      .project-card img {
+        height: 200px;
+        object-fit: cover;
+      }
 
-    .contact-form {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      padding: 30px;
-    }
-    .form-control:focus {
-      border-color: #007bff;
-      box-shadow: none;
-    }
-    footer {
-      background: #222;
-      color: white;
-      padding: 20px 0;
-    }
-    .social-icons a {
-      color: white;
-      font-size: 1.2rem;
-      margin-right: 15px;
-      transition: all 0.3s;
-    }
-        
-    .social-icons a:hover {
-      color: darkgray;
-      transform: translateY(-3px);
-    }
-  </style>
-</head>
-<body>
-  <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75 fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">My Portfolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      .contact-form {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+      }
+      .form-control:focus {
+        border-color: #007bff;
+        box-shadow: none;
+      }
+      footer {
+        background: #222;
+        color: white;
+        padding: 20px 0;
+      }
+      .social-icons a {
+        color: white;
+        font-size: 1.2rem;
+        margin-right: 15px;
+        transition: all 0.3s;
+      }
 
-
-  <!-- Hero Section -->
-  <section id="home" class="hero text-center">
-    <div class="container">
-      <img src="./me.jpg" alt="Profile Picture">
-      <h1 class="mt-4">Hi, I'm Abdulrahmon</h1>
-      <p class="lead">Frontend Developer | HTML, CSS, Bootstrap & JavaScript</p>
-      <div class="social-icons mt-4">
-        <a href="https://wa.me/+2349159749334" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/abdulrahmon-tech-b262a52ab" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </section>
-
-   <!-- Skills Grid -->
-  <section id="skills" class="py-5">
-    <div class="container">
-      <h1 style="color: whitesmoke;">MY SKILLS</h1>1
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card skill-card text-center p-4">
-            <i class="fab fa-html5 mb-3"></i>
-            <h5>HTML</h5>
-            <p>Structuring web pages with semantic HTML for better SEO and accessibility.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card skill-card text-center p-4">
-            <i class="fab fa-css3-alt mb-3"></i>
-            <h5>CSS</h5>
-            <p>Designing responsive and modern layouts using Flexbox, Grid, and animations.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card skill-card text-center p-4">
-            <i class="fab fa-bootstrap mb-3"></i>
-            <h5>Bootstrap</h5>
-            <p>Using Bootstrap’s grid system and components for rapid development.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card skill-card text-center p-4">
-            <i class="fab fa-js mb-3"></i>
-            <h5>JavaScript</h5>
-            <p>Creating interactive and dynamic web applications with vanilla JS.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card skill-card text-center p-4">
-            <i class="fab fa-git-alt mb-3"></i>
-            <h5>Git & GitHub</h5>
-            <p>Version control and collaborative development with Git repositories.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card skill-card text-center p-4">
-            <i class="fas fa-laptop-code mb-3"></i>
-            <h5>Responsive Design</h5>
-            <p>Ensuring websites look great on all devices from mobile to desktop.</p>
-          </div>
+      .social-icons a:hover {
+        color: darkgray;
+        transform: translateY(-3px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75 fixed-top"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">My Portfolio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-center">
+      <div class="container">
+        <img src="./me.jpg" alt="Profile Picture" />
+        <h1 class="mt-4">Hi, I'm Abdulrahmon</h1>
+        <p class="lead">
+          Frontend Developer | HTML, CSS, Bootstrap & JavaScript
+        </p>
+        <div class="social-icons mt-4">
+          <a href="https://wa.me/+2349159749334" target="_blank"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a
+            href="https://www.linkedin.com/in/abdulrahmon-tech-b262a52ab"
+            target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/abdul_rahmon1.2?igsh=aW5iNWdpcWQwbjVl"
+            target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Grid -->
+    <section id="skills" class="py-5">
+      <div class="container">
+        <h1 style="color: whitesmoke">MY SKILLS</h1>
+        1
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+              <i class="fab fa-html5 mb-3"></i>
+              <h5>HTML</h5>
+              <p>
+                Structuring web pages with semantic HTML for better SEO and
+                accessibility.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+              <i class="fab fa-css3-alt mb-3"></i>
+              <h5>CSS</h5>
+              <p>
+                Designing responsive and modern layouts using Flexbox, Grid, and
+                animations.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+              <i class="fab fa-bootstrap mb-3"></i>
+              <h5>Bootstrap</h5>
+              <p>
+                Using Bootstrap’s grid system and components for rapid
+                development.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+              <i class="fab fa-js mb-3"></i>
+              <h5>JavaScript</h5>
+              <p>
+                Creating interactive and dynamic web applications with vanilla
+                JS.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+              <i class="fab fa-git-alt mb-3"></i>
+              <h5>Git & GitHub</h5>
+              <p>
+                Version control and collaborative development with Git
+                repositories.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card skill-card text-center p-4">
+              <i class="fas fa-laptop-code mb-3"></i>
+              <h5>Responsive Design</h5>
+              <p>
+                Ensuring websites look great on all devices from mobile to
+                desktop.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Projects Grid -->
-  <section id="projects" class="py-5">
-    <div class="container">
-      <h1 style="color: whitesmoke;">MY PROJECT</h1>
-      <div class="row g-4">
-        <!-- Project 1 -->
-        <div class="col-md-4 project-card">
-          <div class="card">
-            <img src="./portfolio.png" class="card-img-top" alt="Project 1">
-            <div class="card-body">
-              <h5 class="card-title">Responsive Portfolio</h5>
-              <p class="card-text">A modern personal portfolio built with HTML, CSS, and Bootstrap.</p>
-              <a href="https://rahmoney2.github.io/portfolio/" class="btn btn-dark"><i class="fas fa-link"></i> View Project</a>
+    <section id="projects" class="py-5">
+      <div class="container">
+        <h1 style="color: whitesmoke">MY PROJECT</h1>
+        <div class="row g-4">
+          <!-- Project 1 -->
+          <div class="col-md-4 project-card">
+            <div class="card">
+              <img src="./portfolio.png" class="card-img-top" alt="Project 1" />
+              <div class="card-body">
+                <h5 class="card-title">Responsive Portfolio</h5>
+                <p class="card-text">
+                  A modern personal portfolio built with HTML, CSS, and
+                  Bootstrap.
+                </p>
+                <a
+                  href="https://rahmoney2.github.io/portfolio/"
+                  class="btn btn-dark"
+                  ><i class="fas fa-link"></i> View Project</a
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Project 2 -->
-        <div class="col-md-4 project-card">
-          <div class="card">
-            <img src="weather.png" class="card-img-top" alt="Project 2">
-            <div class="card-body">
-              <h5 class="card-title">JavaScript Weather App</h5>
-              <p class="card-text">An app that fetches weather data from an API and displays it dynamically.</p>
-              <a href="index1.html" class="btn btn-dark"><i class="fas fa-link"></i> View Project</a>
+          <!-- Project 2 -->
+          <div class="col-md-4 project-card">
+            <div class="card">
+              <img src="weather.png" class="card-img-top" alt="Project 2" />
+              <div class="card-body">
+                <h5 class="card-title">JavaScript Weather App</h5>
+                <p class="card-text">
+                  An app that fetches weather data from an API and displays it
+                  dynamically.
+                </p>
+                <a href="index1.html" class="btn btn-dark"
+                  ><i class="fas fa-link"></i> View Project</a
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Project 3 -->
-        <div class="col-md-4 project-card">
-          <div class="card">
-            <img src="./E-commerce.png" class="card-img-top" alt="Project 3">
-            <div class="card-body">
-              <h5 class="card-title">E-commerce Landing Page</h5>
-              <p class="card-text">A clean and responsive landing page for an online store.</p>
-              <a href="e-commerece.html" class="btn btn-dark"><i class="fas fa-link"></i> View Project</a>
+          <!-- Project 3 -->
+          <div class="col-md-4 project-card">
+            <div class="card">
+              <img
+                src="./E-commerce.png"
+                class="card-img-top"
+                alt="Project 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">E-commerce Landing Page</h5>
+                <p class="card-text">
+                  A clean and responsive landing page for an online store.
+                </p>
+                <a href="e-commerece.html" class="btn btn-dark"
+                  ><i class="fas fa-link"></i> View Project</a
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Project 4 -->
-        <div class="col-md-4 project-card">
-          <div class="card">
-            <img src="./Todo list (1).png" class="card-img-top" alt="Project 4">
-            <div class="card-body">
-              <h5 class="card-title">To-Do List App</h5>
-              <p class="card-text">A simple and interactive to-do list app using JavaScript.</p>
-              <a href="Index2.html" class="btn btn-dark"><i class="fas fa-link"></i> View Project</a>
+          <!-- Project 4 -->
+          <div class="col-md-4 project-card">
+            <div class="card">
+              <img
+                src="./Todo list (1).png"
+                class="card-img-top"
+                alt="Project 4"
+              />
+              <div class="card-body">
+                <h5 class="card-title">To-Do List App</h5>
+                <p class="card-text">
+                  A simple and interactive to-do list app using JavaScript.
+                </p>
+                <a href="Index2.html" class="btn btn-dark"
+                  ><i class="fas fa-link"></i> View Project</a
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Project 5 -->
-        <div class="col-md-4 project-card">
-          <div class="card">
-            <img src="./Blog.png" class="card-img-top" alt="Project 5">
-            <div class="card-body">
-              <h5 class="card-title">Blog Website</h5>
-              <p class="card-text">A blog website with a clean design and responsive layout.</p>
-              <a href="https://rahmoney2.github.io/B-Jolat/index.html" class="btn btn-dark"><i class="fas fa-link"></i> View Project</a>
+          <!-- Project 5 -->
+          <div class="col-md-4 project-card">
+            <div class="card">
+              <img src="./Blog.png" class="card-img-top" alt="Project 5" />
+              <div class="card-body">
+                <h5 class="card-title">Blog Website</h5>
+                <p class="card-text">
+                  A blog website with a clean design and responsive layout.
+                </p>
+                <a
+                  href="https://rahmoney2.github.io/B-Jolat/index.html"
+                  class="btn btn-dark"
+                  ><i class="fas fa-link"></i> View Project</a
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Project 6 -->
-        <div class="col-md-4 project-card">
-          <div class="card">
-            <img src="./Quiz.png" class="card-img-top" alt="Project 6">
-            <div class="card-body">
-              <h5 class="card-title">Interactive Quiz</h5>
-              <p class="card-text">A JavaScript-powered quiz game with score tracking.</p>
-              <a href="Quiz.html" class="btn btn-dark"><i class="fas fa-link"></i> View Project</a>
+          <!-- Project 6 -->
+          <div class="col-md-4 project-card">
+            <div class="card">
+              <img src="./Quiz.png" class="card-img-top" alt="Project 6" />
+              <div class="card-body">
+                <h5 class="card-title">Interactive Quiz</h5>
+                <p class="card-text">
+                  A JavaScript-powered quiz game with score tracking.
+                </p>
+                <a href="Quiz.html" class="btn btn-dark"
+                  ><i class="fas fa-link"></i> View Project</a
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-   <!-- Contact Form -->
+    <!-- Contact Form -->
     <section id="contact" class="py-5">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-lg-6">
             <div class="contact-form">
               <h3 class="text-center mb-4">Get in Touch</h3>
-              
+
               <!-- Form -->
               <form id="contactForm" novalidate>
-                
                 <!-- Name -->
                 <div class="mb-3">
                   <label for="namee" class="form-label">Name</label>
-                  <input type="text" name="name" id="namee" class="form-control" placeholder="Your Name" required>
+                  <input
+                    type="text"
+                    name="name"
+                    id="namee"
+                    class="form-control"
+                    placeholder="Your Name"
+                    required
+                  />
                 </div>
-                
+
                 <!-- Email -->
                 <div class="mb-3">
                   <label for="emaill" class="form-label">Email</label>
-                  <input type="email" name="email" id="emaill" class="form-control" placeholder="Your Email" required>
+                  <input
+                    type="email"
+                    name="email"
+                    id="emaill"
+                    class="form-control"
+                    placeholder="Your Email"
+                    required
+                  />
                 </div>
-                
+
                 <!-- Message -->
                 <div class="mb-3">
                   <label for="messagee" class="form-label">Message</label>
-                  <textarea name="message" id="messagee" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                  <textarea
+                    name="message"
+                    id="messagee"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
                 </div>
-                
+
                 <!-- Button -->
-                <button type="submit" class="btn btn-dark w-100">Send Message</button>
-                
+                <button type="submit" class="btn btn-dark w-100">
+                  Send Message
+                </button>
+
                 <!-- Feedback Message -->
                 <p id="formMessage" class="mt-3 text-center"></p>
               </form>
@@ -285,80 +396,92 @@
       </div>
     </section>
 
-  <!-- Footer -->
-  <footer class="text-center">
-    <p>&copy; 2025 Abdulrahmon. All Rights Reserved.</p>
-    <div class="social-icons mt-4">
-      <a href="wa.me/+2349159749334"><i class="fab fa-whatsapp"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="www.linkedin.com/in/abdulrahmon-tech-b262a52ab"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="text-center">
+      <p>&copy; 2025 Abdulrahmon. All Rights Reserved.</p>
+      <div class="social-icons mt-4">
+        <a href="wa.me/+2349159749334"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="www.linkedin.com/in/abdulrahmon-tech-b262a52ab"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/abdul_rahmon1.2?igsh=aW5iNWdpcWQwbjVl"
+          target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Project Card Slide-up Animation
-    document.addEventListener("DOMContentLoaded", () => {
-      const cards = document.querySelectorAll('.project-card');
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Project Card Slide-up Animation
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".project-card");
 
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target);
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+
+        cards.forEach((card) => {
+          observer.observe(card);
+        });
+      });
+    </script>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("namee").value.trim();
+          const email = document.getElementById("emaill").value.trim();
+          const message = document.getElementById("messagee").value.trim();
+          const formMessage = document.getElementById("formMessage");
+
+          // Validation
+          if (!name || !email || !message) {
+            formMessage.textContent = "⚠️ Please fill in all fields.";
+            formMessage.style.color = "red";
+            return;
+          }
+          if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+            formMessage.textContent = "⚠️ Please enter a valid email.";
+            formMessage.style.color = "red";
+            return;
+          }
+
+          try {
+            const response = await fetch("https://formspree.io/f/xnnzeqzw", {
+              method: "POST",
+              headers: { Accept: "application/json" },
+              body: JSON.stringify({ name, email, message }),
+            });
+
+            if (response.ok) {
+              formMessage.textContent = "✅ Message sent successfully!";
+              formMessage.style.color = "green";
+              document.getElementById("contactForm").reset();
+            } else {
+              formMessage.textContent =
+                "❌ Error sending message. Please try again later.";
+              formMessage.style.color = "red";
+            }
+          } catch (error) {
+            formMessage.textContent =
+              "❌ Network error. Please try again later.";
+            formMessage.style.color = "red";
           }
         });
-      }, { threshold: 0.3 });
-
-      cards.forEach(card => {
-        observer.observe(card);
-      });
-    });
-  </script>
-
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      const name = document.getElementById('namee').value.trim();
-      const email = document.getElementById('emaill').value.trim();
-      const message = document.getElementById('messagee').value.trim();
-      const formMessage = document.getElementById('formMessage');
-      
-      // Validation
-      if (!name || !email || !message) {
-        formMessage.textContent = '⚠️ Please fill in all fields.';
-        formMessage.style.color = 'red';
-        return;
-      }
-      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-        formMessage.textContent = '⚠️ Please enter a valid email.';
-        formMessage.style.color = 'red';
-        return;
-      }
-
-      try {
-        const response = await fetch("https://formspree.io/f/xnnzeqzw", {
-          method: "POST",
-          headers: { "Accept": "application/json" },
-          body: JSON.stringify({ name, email, message })
-        });
-
-        if (response.ok) {
-          formMessage.textContent = '✅ Message sent successfully!';
-          formMessage.style.color = 'green';
-          document.getElementById('contactForm').reset();
-        } else {
-          formMessage.textContent = '❌ Error sending message. Please try again later.';
-          formMessage.style.color = 'red';
-        }
-      } catch (error) {
-        formMessage.textContent = '❌ Network error. Please try again later.';
-        formMessage.style.color = 'red';
-      }
-    });
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>
